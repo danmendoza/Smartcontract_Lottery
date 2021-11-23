@@ -1,0 +1,28 @@
+dependencies:
+  # - <organization/repo>@<version>  hacemos esto porque brownie reconoce esta sincronizado con el repo de github, no con el navegador directamente
+  - smartcontractkit/chainlink-brownie-contracts@0.2.1
+  - OpenZeppelin/openzeppelin-contracts@3.4.0
+
+compiler:
+  solc:
+    remappings:
+      - '@chainlink=smartcontractkit/chainlink-brownie-contracts@0.2.1'
+      - '@openzeppelin=OpenZeppelin/openzeppelin-contracts@3.4.0' 
+dotenv: .env 
+networks: 
+  default: development  
+  development:
+    keyhash: '0x2ed0feb3e7fd2022120aa84fab1945545a9f2ffc9076fd6156fa96eaff4c1311' #por defecto usamos el hash de Rinkeby
+    fee: 100000000000000000 #10 * 10**17 = 0.1 LINK
+  mainnet-fork:
+    eth_usd_price_feed: '0x5f4eC3Df9cbd43714FE2740f5E3616155c5b8419'
+  rinkeby: 
+    eth_usd_price_feed: '0x8A753747A1Fa494EC906cE90E9f37563A8AF630e'
+    vrf_coordinator: '0xb3dCcb4Cf7a26f6cf6B120Cf5A73875B7BBc655B' 
+    link_token: '0x01be23585060835e02b77ef475b0cc51aa1e0709'
+    keyhash: '0x2ed0feb3e7fd2022120aa84fab1945545a9f2ffc9076fd6156fa96eaff4c1311'
+    fee: 100000000000000000 #10 * 10**17 = 0.1 LINK
+    verify: True
+
+wallets:
+  from_key: ${NEW_PRIVATE_KEY}

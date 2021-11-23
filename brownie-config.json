@@ -1,0 +1,17 @@
+{
+    "development": [
+        {
+            "test-rpc": [
+                {
+                    "cmd": "ganache-cli",
+                    "port": 7545,
+                    "gas_limit": 6721975,
+                    "accounts": 10,
+                    "evm_version": "petersburg",
+                    "mnemonic": "brownie"
+                }
+            ],
+            "host": "http://127.0.0.1:7545"
+        }
+    ]
+}
